@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+const srcPath = path.resolve(__dirname, 'src');
 const __DEV__ = process.env.NODE_ENV === 'development';
 const webpackDevServer = __DEV__ ? {
   devServer: {
@@ -38,7 +39,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        include: path.resolve(__dirname, 'src'),
+        include: srcPath,
         use: ["babel-loader", "stylelint-custom-processor-loader"]
       },
       {
