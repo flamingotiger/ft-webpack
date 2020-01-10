@@ -38,5 +38,5 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
-  mode: 'none'
+  mode: process.env.NODE_ENV
 }
